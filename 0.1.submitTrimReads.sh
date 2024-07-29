@@ -1,6 +1,6 @@
 #!/bin/sh
 # Grid Engine options
-#$ -N runTrim_galore
+#$ -N runTrimReads.sh
 #$ -cwd 
 #$ -l h_rt=10:00:00
 #$ -l h_vmem=8G
