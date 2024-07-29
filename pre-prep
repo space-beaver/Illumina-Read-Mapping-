@@ -1,0 +1,15 @@
+#set up conda env 
+module load roslin/conda/23.7.2
+module load roslin/mamba/1.0
+
+#set up trim galore env 
+conda create -n trim_galore
+conda activate trim_galore
+mamba install -c bioconda trim_galore
+
+
+
+#create samplelist.txt assuming all .fastq files are in the same dir and the sample name is the string proceeding the first underscore. If adding in flowcell number to RG info, add this as a fourth column. 
+ls *_R1.fastq | sed 's/_R1.fastq//' | while read sample; do echo -e "${sample}\t${sample}_R1.fastq\t${sample}_R2.fastq"; done > samplelist.txt
+
+
