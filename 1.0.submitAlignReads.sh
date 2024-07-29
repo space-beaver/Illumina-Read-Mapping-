@@ -31,11 +31,11 @@ echo Processing sample: ${base} on $HOSTNAME
 $bwa_dir/run-bwamem -d -t 4 -o $out_dir/${base} -HR"@RG\tID:${base}\tSM:${base}" $refgen $fastq_dir/${base}_R1_001_val_1.fq.gz $fastq_dir/${base}_R2_001_val_2.fq.gz | sh
 
 #remove unmapped reads
-samtools view -b -F 4 $out_dir/${base}_$SGE_TASK_ID.aln.bam  > $out_dir/${base}_$SGE_TASK_ID.aln.map.bam 
+samtools view -b -F 4 $out_dir/${base}.aln.bam  > $out_dir/${base}.aln.map.bam 
 
 #for some reason bwa.kit sort gives an error so do separately
-samtools sort $out_dir/${base}_$SGE_TASK_ID.aln.map.bam -o $out_dir/${base}_$SGE_TASK_ID.sorted.bam
+samtools sort $out_dir/${base}.aln.map.bam -o $out_dir/${base}.aln.map.sorted.bam
 
 #index
-samtools index -@ 4 $out_dir/${base}_$SGE_TASK_ID.sorted.bam #change to match file name 
+samtools index -@ 4 $out_dir/${base}.aln.map.sorted.bam #change to match file name 
 
