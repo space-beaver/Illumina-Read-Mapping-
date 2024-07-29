@@ -1,0 +1,10 @@
+#set up conda env 
+module load roslin/conda/23.7.2
+module load roslin/mamba/1.0
+
+#set up trim galore env 
+conda create -n trim_galore
+conda activate trim_galore
+mamba install -c bioconda trim_galore
+
+
