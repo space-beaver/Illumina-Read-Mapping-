@@ -44,5 +44,5 @@ TMP_DIR=tmp
 #getstats  
 samtools flagstat $target_dir/${base}.aln.map.sorted.dedup.bam > $target_dir/${base}.flagstat.txt
 bedtools genomecov -ibam $target_dir/${base}.aln.map.sorted.dedup.bam > $target_dir/${base}.cov.txt
-mosdepth -n --fast-mode -t 4 -Q30 $target_dir/${base} $target_dir/${base}.aln.map.sorted.dedup.bam 
+mosdepth -n -t 4 -Q30 $target_dir/${base} $target_dir/${base}.aln.map.sorted.dedup.bam 
 multiqc $target_dir
