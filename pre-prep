@@ -1,4 +1,4 @@
-#once user has gone through pre-prep and changed all dir and vars in scripts, all scripts can then be run with 'bash submitALl.sh'
+#once user has gone through pre-prep and changed all dir and vars in scripts, all scripts can then be run with 'sh submitALl.sh'
 
 #installs 
 https://github.com/lh3/bwa/blob/master/bwakit/README.md
