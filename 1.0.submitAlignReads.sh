@@ -19,7 +19,7 @@ bwa_dir=/path/to/bwakit/ #or add to PATH
 fastq_dir=/indir/path
 out_dir=/outdir/path
 sample_list=/path/to/samlist.txt #list of file names 
-$refgen=/path/to/indexed/genome
+refgen=/path/to/indexed/genome
 
 #get sample lists
 base=`sed -n "$SGE_TASK_ID"p $sample_list | awk '{print $1}'`
