@@ -1,3 +1,15 @@
+#eddie modules required 
+module load roslin/samtools/1.16
+module load roslin/bedtools/2.29.2
+
+#installs 
+https://github.com/lh3/bwa/blob/master/bwakit/README.md
+https://broadinstitute.github.io/picard/
+
+#index reference genome 
+bwa index /path/to/index/genome/*.fa 
+samtools faidx /path/to/index/genome/*.fa 
+
 #set up conda env 
 module load roslin/conda/23.7.2
 module load roslin/mamba/1.0
@@ -7,9 +19,13 @@ conda create -n trim_galore
 conda activate trim_galore
 mamba install -c bioconda trim_galore
 
+#set up mapstats env 
+conda create -n mapstats 
+conda activate mapstats 
+mamba install -c bioconda mosdepth
+mamba install -c bioconda multiqc 
 
-
-#create samplelist.txt assuming all .fastq files are in the same dir and the sample name is the string proceeding the first underscore. If adding in flowcell number to RG info, add this as a fourth column. 
-ls *_R1.fastq | sed 's/_R1.fastq//' | while read sample; do echo -e "${sample}\t${sample}_R1.fastq\t${sample}_R2.fastq"; done > samplelist.txt
+#create samlist.txt assuming all .fastq files are in the same dir and the sample name is the string proceeding the first underscore. If adding in flowcell number to RG info, add this as a fourth column. 
+ls *_R1.fastq | sed 's/_R1.fastq//' | while read sample; do echo -e "${sample}\t${sample}_R1.fastq\t${sample}_R2.fastq"; done > samlist.txt
 
 
