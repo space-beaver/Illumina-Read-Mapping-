@@ -1,7 +1,3 @@
-#eddie modules required 
-module load roslin/samtools/1.16
-module load roslin/bedtools/2.29.2
-
 #installs 
 https://github.com/lh3/bwa/blob/master/bwakit/README.md
 https://broadinstitute.github.io/picard/
