@@ -14,6 +14,11 @@
 # Initialise the environment modules
 . /etc/profile.d/modules.sh
 source /exports/applications/apps/community/roslin/conda/4.9.1/etc/profile.d/conda.sh
+conda activate mapstats 
+
+#load modules 
+module load roslin/samtools/1.16
+module load roslin/bedtools/2.29.2
 
 #define dirs
 target_dir=/path/to/input/dir
