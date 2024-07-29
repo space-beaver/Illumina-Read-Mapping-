@@ -21,7 +21,7 @@ conda activate trim_galore
 
 #define dirs
 target_dir=/path/to/dir/
-sample_list="/path/to/samlisttrim.txt" # see example file samlisttrim.txt
+sample_list="/path/to/samlist.txt" # see example file samlisttrim.txt
 
 #get filelist
 base=`sed -n "$SGE_TASK_ID"p $sample_list | awk '{print $1}'`
