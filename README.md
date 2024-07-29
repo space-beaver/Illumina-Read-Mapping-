@@ -1,0 +1,1 @@
+Workflow for trimming Illumina short read data, aligning with bwa-mem to a bwa-indexed reference genome, removing duplicate reads and calculating stats. Assumes multiple samples to rn as an arrary on the UoE Eddie compute cluster. See pre-prep. 
