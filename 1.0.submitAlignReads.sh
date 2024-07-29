@@ -35,3 +35,7 @@ samtools view -b -F 4 $out_dir/${base}_$SGE_TASK_ID.aln.bam  > $out_dir/${base}_
 
 #for some reason bwa.kit sort gives an error so do separately
 samtools sort $out_dir/${base}_$SGE_TASK_ID.aln.map.bam -o $out_dir/${base}_$SGE_TASK_ID.sorted.bam
+
+#index
+samtools index -@ 4 $out_dir/${base}_$SGE_TASK_ID.sorted.bam #change to match file name 
+
