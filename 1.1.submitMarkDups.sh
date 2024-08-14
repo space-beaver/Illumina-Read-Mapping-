@@ -40,9 +40,12 @@ OUTPUT=$target_dir/${base}.aln.map.sorted.dedup.bam  \
 REMOVE_DUPLICATES=true \
 METRICS_FILE=$target_dir/${base}.metrics.txt \
 TMP_DIR=tmp
+
+#index 
+samtools index $target_dir/${base}.aln.map.sorted.dedup.bam
  
 #getstats  
 samtools flagstat $target_dir/${base}.aln.map.sorted.dedup.bam > $target_dir/${base}.flagstat.txt
 bedtools genomecov -ibam $target_dir/${base}.aln.map.sorted.dedup.bam > $target_dir/${base}.cov.txt
 mosdepth -n -t 4 -Q30 $target_dir/${base} $target_dir/${base}.aln.map.sorted.dedup.bam 
-multiqc $target_dir
+#multiqc $target_dir
